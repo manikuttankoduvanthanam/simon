@@ -1,0 +1,1 @@
+Place SVGs, icons and images here

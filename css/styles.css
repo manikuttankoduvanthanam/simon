@@ -1,0 +1,22 @@
+
+:root{--primary:#005eb8;--border:#d8dde3;--bg:#f5f7fa}
+*{box-sizing:border-box}
+body{font-family:Arial,sans-serif;background:var(--bg);margin:0}
+.header{background:#fff;border-bottom:1px solid var(--border)}
+.header-inner,.container{max-width:900px;margin:auto;padding:20px}
+.form-group{margin-bottom:24px}
+input,textarea{width:100%;padding:12px;border:1px solid var(--border);border-radius:8px}
+.btn{padding:12px 18px;border:none;border-radius:8px;cursor:pointer}
+.btn-primary{background:var(--primary);color:#fff}
+.btn-secondary{border:1px solid var(--border);background:#fff}
+.voice-box{background:#fff;border:1px solid var(--border);padding:24px;border-radius:12px}
+.voice-state{display:flex;align-items:center;gap:20px}
+.hidden{display:none}
+.record-btn,.stop-record-btn{padding:12px 16px;cursor:pointer}
+.recording-dot{width:16px;height:16px;background:red;border-radius:50%;display:inline-block}
+.audio-player{flex:1}
+.audio-progress{display:flex;align-items:center;gap:10px}
+.progress-track{height:10px;background:#ddd;flex:1;border-radius:99px}
+.progress-fill{height:100%;width:35%;background:var(--primary)}
+.audio-actions{display:flex;gap:12px}
+@media(max-width:768px){.voice-state{flex-direction:column;align-items:stretch}}
