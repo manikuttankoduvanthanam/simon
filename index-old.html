@@ -23,12 +23,44 @@ body{font-family:Inter,Arial,sans-serif;background:var(--bg);color:var(--text);l
 .header{background:#0c0c0c;border-bottom:1px solid var(--border);position:sticky;top:0}
 .header-inner{max-width:1200px;margin:auto;display:flex;justify-content:space-between;align-items:center}
 
-.logo-img{max-width:70px;margin-left:15px}
-.user-profile{display:flex;align-items:center;gap:12px}
-.profile-avatar{width:40px;height:40px;border-radius:50%;object-fit:cover;border:2px solid rgba(255,255,255,0.2)}
-.user-name{color:#ededed;font-weight:500;margin-right:15px}
+
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo-img {
+  max-width: 70px;
+      margin-left: 15px;
+}
+
+.user-profile {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.profile-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid rgba(255,255,255,0.2);
+}
+
+.user-name {
+  color: #ededed;
+  font-weight: 500;
+      margin-right: 15px;
+}
+
+
+
+.logo{font-size:1.2rem;font-weight:700}
 
 .container{max-width:760px;margin:auto;padding:1rem}
+.breadcrumb{font-size:.875rem;color:var(--muted);margin-bottom:1rem}
 .page-title{font-size:2rem;font-weight:700;margin-bottom:.5rem}
 .page-description{color:var(--muted);margin-bottom:2rem}
 
@@ -38,36 +70,31 @@ label{display:block;font-weight:600;margin-bottom:.25rem}
 .required{color:#d5281b}
 
 input,textarea{
-width:100%;
-padding:.875rem;
-border:1px solid var(--border);
-border-radius:var(--radius);
-font-size:1rem
+width:100%;padding:.875rem;border:1px solid var(--border);
+border-radius:var(--radius);font-size:1rem
 }
+
+.client-types{display:grid;grid-template-columns:1fr;gap:1rem}
+.client-card{border:1px solid var(--border);border-radius:var(--radius);padding:1rem}
+.client-card input{width:auto;margin-right:.75rem}
+.client-card-content{display:flex}
+.client-title{font-weight:600}
+.client-description{color:var(--muted);font-size:.875rem}
 
 .location-wrapper{display:flex;flex-direction:column;gap:.75rem}
 .share-location{
-align-self:flex-start;
-padding:.75rem 1rem;
-border:1px solid #9ec5fe;
-background:#eef5ff;
-color:var(--primary);
-border-radius:var(--radius)
+align-self:flex-start;padding:.75rem 1rem;border:1px solid #9ec5fe;
+background:#eef5ff;color:var(--primary);border-radius:var(--radius)
 }
 
+/* Voice Note */
 .voice-box{
 border:1px solid var(--border);
 border-radius:12px;
 background:#fff;
 padding:1.5rem;
 }
-
-.voice-state{
-display:flex;
-align-items:center;
-gap:1.5rem;
-}
-
+.voice-state{display:flex;align-items:center;gap:1.5rem}
 .hidden{display:none}
 
 .record-btn{
@@ -92,9 +119,7 @@ font-weight:700;
 }
 
 .recording-dot{
-width:18px;
-height:18px;
-border-radius:50%;
+width:18px;height:18px;border-radius:50%;
 background:#d5281b;
 animation:pulse 1.2s infinite;
 }
@@ -116,89 +141,68 @@ font-weight:600;
 }
 
 .play-pause-btn{
-width:50px !important;
-height:50px !important;
-border:none;
-border-radius:50%;
-background:var(--primary);
-color:#fff;
-font-size:1.5rem;
-cursor:pointer;
+width:50px !important;height:50px;border:none;border-radius:50%;
+background:var(--primary);color:#fff;font-size:1.5rem;cursor:pointer;
 }
 
 .audio-player{flex:1}
-
-.audio-progress{
-display:flex;
-align-items:center;
-gap:1rem;
-}
-
+.audio-progress{display:flex;align-items:center;gap:1rem}
 .progress-track{
-flex:1;
-height:10px;
-background:#e5e7eb;
-border-radius:999px;
-overflow:hidden;
+flex:1;height:10px;background:#e5e7eb;border-radius:999px;overflow:hidden
 }
-
-.progress-fill{
-width:0%;
-height:100%;
-background:var(--primary);
-}
-
-.audio-actions{
-display:flex;
-gap:1rem;
-}
-
-.icon-btn{
-border:none;
-background:none;
-color:var(--muted);
-cursor:pointer;
-font-weight:600;
-}
+.progress-fill{width:35%;height:100%;background:var(--primary)}
+.audio-actions{display:flex;gap:1rem}
+.icon-btn{border:none;background:none;color:var(--muted);cursor:pointer;font-weight:600}
 
 .form-actions{
-display:flex;
-flex-direction:column-reverse;
-gap:.75rem;
-margin-top:2rem;
-padding-top:1.5rem;
-border-top:1px solid var(--border)
+display:flex;flex-direction:column-reverse;gap:.75rem;
+margin-top:2rem;padding-top:1.5rem;border-top:1px solid var(--border)
 }
 
-.btn{
-padding:.9rem 1.2rem;
-border-radius:var(--radius);
-font-weight:600;
-border:none;
-cursor:pointer
-}
-
+.btn{padding:.9rem 1.2rem;border-radius:var(--radius);font-weight:600;border:none;cursor:pointer}
 .btn-primary{background:var(--primary);color:#fff}
 .btn-secondary{background:#fff;border:1px solid var(--border)}
+.btn-link{background:none}
 
+@media (min-width:768px){
+.container{padding:2rem}
+.client-types{grid-template-columns:1fr 1fr}
+.form-actions{flex-direction:row;justify-content:space-between;align-items:center}
 .action-right{display:flex;gap:1rem}
+}
 
 @media (max-width:768px){
 .voice-state{flex-direction:column;align-items:stretch}
 .play-pause-btn,.stop-record-btn{width:100%}
+.audio-actions{justify-content:space-between}
+.audio-progress{flex-wrap:wrap}
 }
 </style>
 </head>
 <body>
 
 <header class="header">
-<div class="header-inner">
-<img class="logo-img" src="images/logo.png" alt="Logo">
-<div class="user-profile">
-<img src="images/user.jpeg" alt="Sarah Mitchell" class="profile-avatar">
-<span class="user-name">Sarah Mitchell</span>
-</div>
-</div>
+  <div class="header-inner">
+
+    <img
+      class="logo-img"
+      src="images/logo.png"
+      alt="SOTS Logo">
+
+    <div class="user-profile">
+
+      <img
+        src="images/user.jpeg"
+        alt="Sarah Mitchell"
+        class="profile-avatar">
+
+      <span class="user-name">
+        Sarah Mitchell
+      </span>
+
+    </div>
+
+  </div>
 </header>
 
 <main class="container">
@@ -207,6 +211,17 @@ cursor:pointer
 <p class="page-description">Enter the client details below to create a new case record.</p>
 
 <form>
+<!--
+<div class="form-group">
+<label>Client Type <span class="required">*</span></label>
+<div class="hint">Select the type of client for this case record</div>
+<div class="client-types">
+<label class="client-card"><div class="client-card-content"><input type="radio" name="clientType"><div><div class="client-title">Caseload Client</div><div class="client-description">Actively managed within your caseload.</div></div></div></label>
+<label class="client-card"><div class="client-card-content"><input type="radio" name="clientType"><div><div class="client-title">Non-Caseload Client</div><div class="client-description">Support only — not actively managed.</div></div></div></label>
+</div>
+</div>
+
+-->
 
 <div class="form-group">
 <label>Full name or known name <span class="required">*</span></label>
@@ -214,7 +229,7 @@ cursor:pointer
 </div>
 
 <div class="form-group">
-<label>Phone Number</label>
+<label>Phone Number <span class="optional"></span></label>
 <input type="tel" placeholder="07123 456789">
 </div>
 
@@ -233,9 +248,7 @@ cursor:pointer
 
 <div class="form-group">
 <label>Voice Note <span class="hint">(optional)</span></label>
-<div class="hint">
-Record a brief spoken note to attach to this case. Once recorded, you can play back, view the transcript, or copy the transcript into your notes.
-</div>
+<div class="hint">Record a brief spoken note to attach to this case. Once recorded, you can play back, view the transcript, or copy the transcript into your notes.</div>
 
 <div class="voice-box">
 
@@ -252,18 +265,13 @@ Record a brief spoken note to attach to this case. Once recorded, you can play b
 </div>
 
 <div id="voicePlayback" class="voice-state hidden">
-
-<button type="button" class="play-pause-btn" onclick="togglePlayback()">
-<span id="playIcon">▶</span>
-</button>
+<button type="button" class="play-pause-btn" onclick="togglePlayback()"><span id="playIcon">▶</span></button>
 
 <div class="audio-player">
 <div class="audio-progress">
-<span id="elapsedTime">0:00</span>
-<div class="progress-track">
-<div class="progress-fill"></div>
-</div>
-<span id="totalTime">0:00</span>
+<span id="elapsedTime">0:05</span>
+<div class="progress-track"><div class="progress-fill"></div></div>
+<span>00:00</span>
 </div>
 </div>
 
@@ -271,13 +279,13 @@ Record a brief spoken note to attach to this case. Once recorded, you can play b
 <button type="button" class="icon-btn" onclick="deleteRecording()">🗑 Delete</button>
 <button type="button" class="icon-btn" onclick="reRecord()">↺ Re-record</button>
 </div>
-
 </div>
 
 </div>
 </div>
 
 <div class="form-actions">
+
 <div class="action-right">
 <button type="button" class="btn btn-secondary">Cancel</button>
 <button type="submit" class="btn btn-primary">Create Case</button>
@@ -288,118 +296,49 @@ Record a brief spoken note to attach to this case. Once recorded, you can play b
 </main>
 
 <script>
-let mediaRecorder;
-let audioChunks = [];
-let audioBlob = null;
-let audioUrl = null;
-let audio = null;
-
 let recordingTimer;
-let seconds = 0;
+let seconds=0;
+let isPlaying=false;
 
-function formatTime(total){
-const mins=Math.floor(total/60);
-const secs=total%60;
-return `${mins}:${String(secs).padStart(2,'0')}`;
-}
-
-async function startRecording(){
-try{
-const stream = await navigator.mediaDevices.getUserMedia({audio:true});
-
-mediaRecorder = new MediaRecorder(stream);
-audioChunks = [];
-
-mediaRecorder.ondataavailable=(event)=>{
-if(event.data.size>0){
-audioChunks.push(event.data);
-}
-};
-
-mediaRecorder.onstop=()=>{
-audioBlob = new Blob(audioChunks,{type:'audio/webm'});
-audioUrl = URL.createObjectURL(audioBlob);
-audio = new Audio(audioUrl);
-
-document.getElementById('voiceRecording').classList.add('hidden');
-document.getElementById('voicePlayback').classList.remove('hidden');
-
-audio.addEventListener('loadedmetadata',()=>{
-document.getElementById('totalTime').textContent =
-formatTime(Math.floor(audio.duration));
-});
-
-audio.addEventListener('timeupdate',()=>{
-const progress=(audio.currentTime/audio.duration)*100;
-document.querySelector('.progress-fill').style.width=`${progress}%`;
-document.getElementById('elapsedTime').textContent =
-formatTime(Math.floor(audio.currentTime));
-});
-
-audio.addEventListener('ended',()=>{
-document.getElementById('playIcon').textContent='▶';
-});
-};
-
-mediaRecorder.start();
-
+function startRecording(){
 document.getElementById('voiceIdle').classList.add('hidden');
 document.getElementById('voiceRecording').classList.remove('hidden');
-
 seconds=0;
-
 recordingTimer=setInterval(()=>{
 seconds++;
 const mins=String(Math.floor(seconds/60)).padStart(2,'0');
 const secs=String(seconds%60).padStart(2,'0');
 document.getElementById('recordTimer').textContent=`${mins}:${secs}`;
 },1000);
-
-}catch(err){
-alert('Please allow microphone access.');
-console.error(err);
-}
 }
 
 function stopRecording(){
 clearInterval(recordingTimer);
-
-if(mediaRecorder && mediaRecorder.state!=='inactive'){
-mediaRecorder.stop();
-}
-}
-
-function togglePlayback(){
-if(!audio) return;
-
-if(audio.paused){
-audio.play();
-document.getElementById('playIcon').textContent='⏸';
-}else{
-audio.pause();
-document.getElementById('playIcon').textContent='▶';
-}
+document.getElementById('voiceRecording').classList.add('hidden');
+document.getElementById('voicePlayback').classList.remove('hidden');
+document.getElementById('elapsedTime').textContent=formatTime(seconds);
 }
 
 function deleteRecording(){
-if(audio){
-audio.pause();
-audio.currentTime=0;
-}
-
 document.getElementById('voicePlayback').classList.add('hidden');
 document.getElementById('voiceIdle').classList.remove('hidden');
-
-document.querySelector('.progress-fill').style.width='0%';
-
-audio=null;
-audioBlob=null;
-audioChunks=[];
+seconds=0;
 }
 
 function reRecord(){
-deleteRecording();
+document.getElementById('voicePlayback').classList.add('hidden');
 startRecording();
+}
+
+function togglePlayback(){
+isPlaying=!isPlaying;
+document.getElementById('playIcon').textContent=isPlaying?'⏸':'▶';
+}
+
+function formatTime(total){
+const mins=Math.floor(total/60);
+const secs=total%60;
+return `${mins}:${String(secs).padStart(2,'0')}`;
 }
 </script>
 
